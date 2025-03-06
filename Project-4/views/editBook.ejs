@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✏️ Edit Book</h1>
+        <form action="/edit/<%= book._id %>" method="POST" class="book-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="<%= book.title %>" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="<%= book.author %>" required>
+
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" value="<%= book.genre %>" required>
+
+            <label for="publishedYear">Published Year:</label>
+            <input type="number" id="publishedYear" name="publishedYear" value="<%= book.publishedYear %>" required>
+
+            <button type="submit" class="btn">💾 Update Book</button>
+        </form>
+        <a href="/" class="back-btn">🔙 Back</a>
+    </div>
+</body>
+</html>

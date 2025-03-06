@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Store</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Book Store</h1>
+        <a href="/add" class="btn">➕ Add New Book</a>
+        <div class="book-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Year</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% books.forEach(book => { %>
+                        <tr>
+                            <td><%= book.title %></td>
+                            <td><%= book.author %></td>
+                            <td><%= book.genre %></td>
+                            <td><%= book.publishedYear %></td>
+                            <td>
+                                <a href="/edit/<%= book._id %>" class="edit-btn">✏️ Edit</a>
+                                <form action="/delete/<%= book._id %>" method="POST">
+                                    <button type="submit" class="delete-btn">🗑️ Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
